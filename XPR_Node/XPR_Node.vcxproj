@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16286940-378b-4fae-b34d-b594490ba50a}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>XPR_Node</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <TargetExt>.run</TargetExt>
+    <IncludePath>../include;</IncludePath>
+    <SourcePath>../src;</SourcePath>
+    <RemoteLdToolExe>g++</RemoteLdToolExe>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <TargetExt>.run</TargetExt>
+    <IncludePath>../include;</IncludePath>
+    <SourcePath>../src;</SourcePath>
+    <RemoteLdToolExe>g++</RemoteLdToolExe>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\EL_Ring.cpp" />
+    <ClCompile Include="..\src\XPR_Engine.cpp" />
+    <ClCompile Include="XPR_Node.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\EL_Pixel.hpp" />
+    <ClInclude Include="..\include\EL_Ring.hpp" />
+    <ClInclude Include="..\include\EL_Types.hpp" />
+    <ClInclude Include="..\include\PCA9685.hpp" />
+    <ClInclude Include="..\include\W_Types.hpp" />
+    <ClInclude Include="..\include\XPR_Engine.hpp" />
+    <ClInclude Include="..\include\XPR_Types.hpp" />
+    <ClInclude Include="XPR_Node.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="pkg.txt" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <CLanguageStandard>gnu99</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+      <AdditionalIncludeDirectories>/opt/ros/foxy/include;include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SharedLibrarySearchPath>/opt/ros/foxy/lib;%(Link.SharedLibrarySearchPath)</SharedLibrarySearchPath>
+    </Link>
+    <Link>
+      <AdditionalLibraryDirectories>/opt/ros/foxy/lib;%(Link.AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LibraryDependencies>wiringPi;pthread;rclcpp;rt;rcutils;libstatistics_collector;action_msgs__rosidl_typesupport_cpp;action_msgs__rosidl_typesupport_fastrtps_cpp;action_msgs__rosidl_typesupport_introspection_cpp;actionlib_msgs__rosidl_typesupport_cpp;actionlib_msgs__rosidl_typesupport_fastrtps_cpp;actionlib_msgs__rosidl_typesupport_introspection_cpp;ament_index_cpp;builtin_interfaces__rosidl_typesupport_cpp;builtin_interfaces__rosidl_typesupport_fastrtps_cpp;builtin_interfaces__rosidl_typesupport_introspection_cpp;class_loader;component_manager;composition_interfaces__rosidl_typesupport_cpp;composition_interfaces__rosidl_typesupport_fastrtps_cpp;composition_interfaces__rosidl_typesupport_introspection_cpp;converter_test_plugins;diagnostic_msgs__rosidl_typesupport_cpp;diagnostic_msgs__rosidl_typesupport_fastrtps_cpp;diagnostic_msgs__rosidl_typesupport_introspection_cpp;geometry_msgs__rosidl_typesupport_cpp;geometry_msgs__rosidl_typesupport_fastrtps_cpp;geometry_msgs__rosidl_typesupport_introspection_cpp;kdl_parser;libstatistics_collector_test_msgs__rosidl_generator_c;libstatistics_collector_test_msgs__rosidl_typesupport_cpp;libstatistics_collector_test_msgs__rosidl_typesupport_fastrtps_cpp;libstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp;lifecycle_msgs__rosidl_typesupport_cpp;lifecycle_msgs__rosidl_typesupport_fastrtps_cpp;lifecycle_msgs__rosidl_typesupport_introspection_cpp;message_filters;nav_msgs__rosidl_typesupport_cpp;nav_msgs__rosidl_typesupport_fastrtps_cpp;nav_msgs__rosidl_typesupport_introspection_cpp;orocos-kdl;rcl;rcl_action;rcl_interfaces__rosidl_typesupport_cpp;rcl_interfaces__rosidl_typesupport_fastrtps_cpp;rcl_interfaces__rosidl_typesupport_introspection_cpp;rcl_lifecycle;rcl_logging_spdlog;rcl_yaml_param_parser;rclcpp_action;rclcpp_lifecycle;rcpputils;rmw_dds_common__rosidl_typesupport_cpp;rmw_dds_common__rosidl_typesupport_fastrtps_cpp;rmw_dds_common__rosidl_typesupport_introspection_cpp;rmw_fastrtps_cpp;rmw_fastrtps_shared_cpp;rmw_implementation;robot_state_publisher_node;rosbag2_compression;rosbag2_compression_zstd;rosbag2_converter_default_plugins;rosbag2_cpp;rosbag2_storage;rosbag2_storage_default_plugins;rosbag2_transport;rosgraph_msgs__rosidl_typesupport_cpp;rosgraph_msgs__rosidl_typesupport_fastrtps_cpp;rosgraph_msgs__rosidl_typesupport_introspection_cpp;rosidl_typesupport_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp;sensor_msgs__rosidl_typesupport_cpp;sensor_msgs__rosidl_typesupport_fastrtps_cpp;sensor_msgs__rosidl_typesupport_introspection_cpp;shape_msgs__rosidl_typesupport_cpp;shape_msgs__rosidl_typesupport_fastrtps_cpp;shape_msgs__rosidl_typesupport_introspection_cpp;statistics_msgs__rosidl_typesupport_cpp;statistics_msgs__rosidl_typesupport_fastrtps_cpp;statistics_msgs__rosidl_typesupport_introspection_cpp;std_msgs__rosidl_typesupport_cpp;std_msgs__rosidl_typesupport_fastrtps_cpp;std_msgs__rosidl_typesupport_introspection_cpp;std_srvs__rosidl_typesupport_cpp;std_srvs__rosidl_typesupport_fastrtps_cpp;std_srvs__rosidl_typesupport_introspection_cpp;stereo_msgs__rosidl_typesupport_cpp;stereo_msgs__rosidl_typesupport_fastrtps_cpp;stereo_msgs__rosidl_typesupport_introspection_cpp;test_plugin;tf2;tf2_msgs__rosidl_typesupport_cpp;tf2_msgs__rosidl_typesupport_fastrtps_cpp;tf2_msgs__rosidl_typesupport_introspection_cpp;tf2_ros;tracetools;trajectory_msgs__rosidl_typesupport_cpp;trajectory_msgs__rosidl_typesupport_fastrtps_cpp;trajectory_msgs__rosidl_typesupport_introspection_cpp;unique_identifier_msgs__rosidl_typesupport_cpp;unique_identifier_msgs__rosidl_typesupport_fastrtps_cpp;unique_identifier_msgs__rosidl_typesupport_introspection_cpp;urdf;visualization_msgs__rosidl_typesupport_cpp;visualization_msgs__rosidl_typesupport_fastrtps_cpp;visualization_msgs__rosidl_typesupport_introspection_cpp;yaml;zstd;</LibraryDependencies>
+      <AdditionalDependencies>$(StlAdditionalDependencies);%(Link.AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>true</ShowProgress>
+      <VerboseOutput>false</VerboseOutput>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <WholeArchiveBegin>false</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <CLanguageStandard>gnu99</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+      <AdditionalIncludeDirectories>/opt/ros/foxy/include;include;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SharedLibrarySearchPath>/opt/ros/foxy/lib;%(Link.SharedLibrarySearchPath)</SharedLibrarySearchPath>
+    </Link>
+    <Link>
+      <AdditionalLibraryDirectories>/opt/ros/foxy/lib;%(Link.AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LibraryDependencies>wiringPi;pthread;rclcpp;rt;rcutils;libstatistics_collector;action_msgs__rosidl_typesupport_cpp;action_msgs__rosidl_typesupport_fastrtps_cpp;action_msgs__rosidl_typesupport_introspection_cpp;actionlib_msgs__rosidl_typesupport_cpp;actionlib_msgs__rosidl_typesupport_fastrtps_cpp;actionlib_msgs__rosidl_typesupport_introspection_cpp;ament_index_cpp;builtin_interfaces__rosidl_typesupport_cpp;builtin_interfaces__rosidl_typesupport_fastrtps_cpp;builtin_interfaces__rosidl_typesupport_introspection_cpp;class_loader;component_manager;composition_interfaces__rosidl_typesupport_cpp;composition_interfaces__rosidl_typesupport_fastrtps_cpp;composition_interfaces__rosidl_typesupport_introspection_cpp;converter_test_plugins;diagnostic_msgs__rosidl_typesupport_cpp;diagnostic_msgs__rosidl_typesupport_fastrtps_cpp;diagnostic_msgs__rosidl_typesupport_introspection_cpp;geometry_msgs__rosidl_typesupport_cpp;geometry_msgs__rosidl_typesupport_fastrtps_cpp;geometry_msgs__rosidl_typesupport_introspection_cpp;kdl_parser;libstatistics_collector_test_msgs__rosidl_generator_c;libstatistics_collector_test_msgs__rosidl_typesupport_cpp;libstatistics_collector_test_msgs__rosidl_typesupport_fastrtps_cpp;libstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp;lifecycle_msgs__rosidl_typesupport_cpp;lifecycle_msgs__rosidl_typesupport_fastrtps_cpp;lifecycle_msgs__rosidl_typesupport_introspection_cpp;message_filters;nav_msgs__rosidl_typesupport_cpp;nav_msgs__rosidl_typesupport_fastrtps_cpp;nav_msgs__rosidl_typesupport_introspection_cpp;orocos-kdl;rcl;rcl_action;rcl_interfaces__rosidl_typesupport_cpp;rcl_interfaces__rosidl_typesupport_fastrtps_cpp;rcl_interfaces__rosidl_typesupport_introspection_cpp;rcl_lifecycle;rcl_logging_spdlog;rcl_yaml_param_parser;rclcpp_action;rclcpp_lifecycle;rcpputils;rmw_dds_common__rosidl_typesupport_cpp;rmw_dds_common__rosidl_typesupport_fastrtps_cpp;rmw_dds_common__rosidl_typesupport_introspection_cpp;rmw_fastrtps_cpp;rmw_fastrtps_shared_cpp;rmw_implementation;robot_state_publisher_node;rosbag2_compression;rosbag2_compression_zstd;rosbag2_converter_default_plugins;rosbag2_cpp;rosbag2_storage;rosbag2_storage_default_plugins;rosbag2_transport;rosgraph_msgs__rosidl_typesupport_cpp;rosgraph_msgs__rosidl_typesupport_fastrtps_cpp;rosgraph_msgs__rosidl_typesupport_introspection_cpp;rosidl_typesupport_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp;sensor_msgs__rosidl_typesupport_cpp;sensor_msgs__rosidl_typesupport_fastrtps_cpp;sensor_msgs__rosidl_typesupport_introspection_cpp;shape_msgs__rosidl_typesupport_cpp;shape_msgs__rosidl_typesupport_fastrtps_cpp;shape_msgs__rosidl_typesupport_introspection_cpp;statistics_msgs__rosidl_typesupport_cpp;statistics_msgs__rosidl_typesupport_fastrtps_cpp;statistics_msgs__rosidl_typesupport_introspection_cpp;std_msgs__rosidl_typesupport_cpp;std_msgs__rosidl_typesupport_fastrtps_cpp;std_msgs__rosidl_typesupport_introspection_cpp;std_srvs__rosidl_typesupport_cpp;std_srvs__rosidl_typesupport_fastrtps_cpp;std_srvs__rosidl_typesupport_introspection_cpp;stereo_msgs__rosidl_typesupport_cpp;stereo_msgs__rosidl_typesupport_fastrtps_cpp;stereo_msgs__rosidl_typesupport_introspection_cpp;test_plugin;tf2;tf2_msgs__rosidl_typesupport_cpp;tf2_msgs__rosidl_typesupport_fastrtps_cpp;tf2_msgs__rosidl_typesupport_introspection_cpp;tf2_ros;tracetools;trajectory_msgs__rosidl_typesupport_cpp;trajectory_msgs__rosidl_typesupport_fastrtps_cpp;trajectory_msgs__rosidl_typesupport_introspection_cpp;unique_identifier_msgs__rosidl_typesupport_cpp;unique_identifier_msgs__rosidl_typesupport_fastrtps_cpp;unique_identifier_msgs__rosidl_typesupport_introspection_cpp;urdf;visualization_msgs__rosidl_typesupport_cpp;visualization_msgs__rosidl_typesupport_fastrtps_cpp;visualization_msgs__rosidl_typesupport_introspection_cpp;yaml;zstd;</LibraryDependencies>
+      <AdditionalDependencies>$(StlAdditionalDependencies);%(Link.AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>true</ShowProgress>
+      <VerboseOutput>false</VerboseOutput>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <WholeArchiveBegin>false</WholeArchiveBegin>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

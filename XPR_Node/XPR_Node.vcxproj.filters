@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="XPR_Node.cpp" />
+    <ClCompile Include="..\src\EL_Ring.cpp">
+      <Filter>Src\EL_</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\XPR_Engine.cpp">
+      <Filter>Src\XPR_</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{32bc25a7-6d46-4cbf-9b19-9d498c63c168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{0be7b26d-a6ba-4980-8155-cb9adbcb963d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\EL_">
+      <UniqueIdentifier>{7939af94-2839-4716-9aad-b1e9f2bdaaf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\W_">
+      <UniqueIdentifier>{7acff516-0588-4346-82de-b02891ed967f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\XPR_">
+      <UniqueIdentifier>{44a80f4f-81d6-42e7-be30-38fd8250bc0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\EL_">
+      <UniqueIdentifier>{b22382f5-eafa-4a8d-8c0a-ee8f4111a37d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\XPR_">
+      <UniqueIdentifier>{7ab6a7ef-ea28-4a86-8ee4-f5c178d58d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc\PCA9685">
+      <UniqueIdentifier>{c6b5b6c5-ad86-4de0-bed4-538826f1d826}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\EL_Types.hpp">
+      <Filter>Inc\EL_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\EL_Pixel.hpp">
+      <Filter>Inc\EL_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\EL_Ring.hpp">
+      <Filter>Inc\EL_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\W_Types.hpp">
+      <Filter>Inc\W_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\XPR_Types.hpp">
+      <Filter>Inc\XPR_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\XPR_Engine.hpp">
+      <Filter>Inc\XPR_</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PCA9685.hpp">
+      <Filter>Inc\PCA9685</Filter>
+    </ClInclude>
+    <ClInclude Include="XPR_Node.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="pkg.txt" />
+  </ItemGroup>
+</Project>

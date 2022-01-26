@@ -1,0 +1,12 @@
+# Ignore everything!
+*State_Node/.vs/
+*XPR_Node/.vs/
+
+*.out
+
+*.tlog
+*.log
+*.lastbuildstate
+*.t
+*.run
+*.FileListAbsolute.txt

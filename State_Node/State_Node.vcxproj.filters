@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{53093343-ce38-4495-adcd-0d991921b321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{851c169b-ac2e-4378-a2c2-0d9fd6d3333e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\XPR_Types.hpp">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\EL_Types.hpp">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Node.hpp" />
+    <ClInclude Include="..\include\W_Types.hpp">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="State_Node.cpp" />
+  </ItemGroup>
+</Project>
